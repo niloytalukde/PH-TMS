@@ -16,6 +16,18 @@ const createDivision =catchAsync(async (req: Request, res: Response, next: NextF
     });
   }
 );
+const getSingleDivision =catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  const slug =req.params.slug
+    const singleDivision = await divisionServices.getSingleDivision(slug)
+
+    sendResponse(res, {
+      success: true,
+      message: "Get All Division ",
+      statusCode: 201,
+      data: singleDivision,
+    });
+  }
+);
 const getAllDivision =catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const allDivision = await divisionServices.getAllDivision()
 
@@ -60,5 +72,6 @@ export const  divisionController={
 createDivision,
 getAllDivision,
 updateDivision,
-deleteDivision
+deleteDivision,
+getSingleDivision
 }

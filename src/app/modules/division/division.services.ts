@@ -19,6 +19,10 @@ const getAllDivision = async () => {
   const division = await Division.find({});
   return division;
 };
+const getSingleDivision = async (slug:string) => {
+  const division = await Division.findOne({slug});
+  return division;
+};
 
 const deleteDivision = async (id: string) => {
   await Division.findByIdAndDelete(id);
@@ -53,4 +57,5 @@ export const divisionServices = {
   updateDivision,
   getAllDivision,
   deleteDivision,
+  getSingleDivision
 };

@@ -12,10 +12,11 @@ router.get("/tour-types",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),tourController.g
 router.patch("/tour-types/:id",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),tourController.updateTourTypes)
 router.delete("/tour-types/:id",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),tourController.deleteTourTypes)
 
+
 // Tour Api Route 
 router.post("/create",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),validationRequest(tourZodSchema),tourController.createTour)
 
-
+router.get("/",tourController.getAllTour)
 router.patch("/:id",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),validationRequest(tourZodSchema),tourController.updateTourTypes)
 router.delete("/:id",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),tourController.deleteTourTypes)
 

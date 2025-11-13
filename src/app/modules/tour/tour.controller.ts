@@ -30,6 +30,7 @@ const getAllTourTypes = catchAsync(
     });
   }
 );
+
 const updateTourTypes = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const id = req.params.id;
@@ -123,5 +124,5 @@ export const tourController = {
   deleteTourTypes,
   createTour,
   updateTour,
-  deleteTour
+  deleteTour,getAllTour
 };
