@@ -10,6 +10,7 @@ const router =Router()
 
 router.post("/create",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),validationRequest(createDivisionSchema),divisionController.createDivision)
 router.get("/",divisionController.getAllDivision)
+router.get("/:slug",divisionController.getSingleDivision)
 router.patch("/:id",checkAuth(Role.ADMIN,Role.SUPER_ADMIN),validationRequest(updateDivisionSchema),divisionController.updateDivision)
 router.delete("/:id",divisionController.deleteDivision)
 
